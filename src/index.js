@@ -1,5 +1,6 @@
 // Load environment variables from .env file
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 // Workaround for 'querySrv ECONNREFUSED' MongoDB Atlas connection error
 const dns = require('dns');
@@ -84,8 +85,10 @@ app.get('/api/health', (req, res) => {
 // ===== CONNECT TO MONGODB =====
 console.log('⏳ Attempting to connect to MongoDB...');
 
-if (!process.env.MONGO_URI) {
-  console.error('❌ CRITICAL ERROR: MONGO_URI is not defined in environment variables.');
+if (!process.env.MONGO_URI || !process.env.JWT_SECRET) {
+  console.error('❌ CRITICAL ERROR: Mandatory environment variables are missing!');
+  if (!process.env.MONGO_URI) console.error('  - MONGO_URI is not defined.');
+  if (!process.env.JWT_SECRET) console.error('  - JWT_SECRET is not defined.');
   console.error('Available keys:', Object.keys(process.env).join(', '));
   process.exit(1);
 }

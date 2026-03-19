@@ -17,8 +17,9 @@ const authMiddleware = (req, res, next) => {
     // Extract the token (remove "Bearer " prefix)
     const token = authHeader.split(' ')[1];
 
-    // Verify the token using our secret key
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // Verify the token using our secret key (with same fallback as in auth script)
+    const secret = process.env.JWT_SECRET || 'fallback_development_secret_key_123';
+    const decoded = jwt.verify(token, secret);
 
     // Attach the userId to request so the route can use it
     // Support both req.userId (cart routes) and req.user.id (user routes)

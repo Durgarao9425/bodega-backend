@@ -96,8 +96,12 @@ router.post('/verify-otp', async (req, res) => {
     }
 
     // Check if OTP is correct (case-insensitive and trimmed)
-    console.log(`🔑 Comparing OTPs: DB=${user.otp}, Input=${otp}`);
-    if (String(user.otp).trim() !== String(otp).trim()) {
+    // Explicitly convert both to strings for safe comparison
+    const storedOtp = String(user.otp || '').trim();
+    const inputOtp = String(otp || '').trim();
+
+    console.log(`🔑 Comparing OTPs: DB='${storedOtp}', Input='${inputOtp}'`);
+    if (storedOtp !== inputOtp) {
       return res.status(400).json({ message: 'Invalid OTP. Please try again.' });
     }
 
@@ -137,6 +141,18 @@ router.post('/verify-otp', async (req, res) => {
       error: error.message 
     });
   }
+});
+
+// ===========================================================
+// GET /api/auth/status
+// Health check for frontend to verify code version
+// ===========================================================
+router.get('/status', (req, res) => {
+  res.status(200).json({ 
+    status: 'online', 
+    version: '1.2.0',
+    hasSecret: !!process.env.JWT_SECRET
+  });
 });
 
 module.exports = router;
