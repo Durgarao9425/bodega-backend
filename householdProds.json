@@ -1,0 +1,146 @@
+[
+  {
+    "_id": "69bbb4d101e31977481afb08",
+    "name": "Surf Excel Liquid Detergent 1L",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  },
+  {
+    "_id": "69bbb4d101e31977481afb09",
+    "name": "Ariel Matic Liquid Detergent",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  },
+  {
+    "_id": "69bbb4d101e31977481afb0a",
+    "name": "Lizol Floor Cleaner Citrus",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  },
+  {
+    "_id": "69bbb4d101e31977481afb0b",
+    "name": "Vim Dishwash Liquid Lemon",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  },
+  {
+    "_id": "69bbb4d101e31977481afb0c",
+    "name": "Harpic Toilet Cleaner",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  },
+  {
+    "_id": "69bbb4d101e31977481afb0d",
+    "name": "Agarbatti Premium Pack",
+    "category": "Households",
+    "subcategory": "Pooja items"
+  },
+  {
+    "_id": "69bbb4d101e31977481afb0f",
+    "name": "Camphor / Kapur 50g",
+    "category": "Households",
+    "subcategory": "Pooja items"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62f8e",
+    "name": "Oats 1kg",
+    "category": "Households",
+    "subcategory": "Breakfast & cereals"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62f97",
+    "name": "Honey Nut Crunch 300g",
+    "category": "Households",
+    "subcategory": "Breakfast & cereals"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62f9a",
+    "name": "Himalaya Neem Face Wash 150ml",
+    "category": "Households",
+    "subcategory": "Facewash & skincare"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fa0",
+    "name": "Garnier Men Face Wash",
+    "category": "Households",
+    "subcategory": "Facewash & skincare"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fa9",
+    "name": "Head & Shoulders 650ml",
+    "category": "Households",
+    "subcategory": "Hair care"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fac",
+    "name": "Pantene Hair Fall Control",
+    "category": "Households",
+    "subcategory": "Hair care"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62faf",
+    "name": "Dove Conditioner 180ml",
+    "category": "Households",
+    "subcategory": "Hair care"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fb2",
+    "name": "Parachute Coconut Oil",
+    "category": "Households",
+    "subcategory": "Hair care"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fb5",
+    "name": "Loreal Hair Serum",
+    "category": "Households",
+    "subcategory": "Hair care"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fb8",
+    "name": "Colgate Total 120g",
+    "category": "Households",
+    "subcategory": "Oral care"
+  },
+  {
+    "_id": "69bbb8d34e7e87b40ec62fc1",
+    "name": "Oral-B Toothbrush Pack of 4",
+    "category": "Households",
+    "subcategory": "Oral care"
+  },
+  {
+    "_id": "69bbb8d54e7e87b40ec63003",
+    "name": "Kumkum & Turmeric",
+    "category": "Households",
+    "subcategory": "Pooja items"
+  },
+  {
+    "_id": "69bbb8d54e7e87b40ec63006",
+    "name": "Cotton Wicks",
+    "category": "Households",
+    "subcategory": "Pooja items"
+  },
+  {
+    "_id": "69bbb8d54e7e87b40ec6300c",
+    "name": "Sandalwood Paste",
+    "category": "Households",
+    "subcategory": "Pooja items"
+  },
+  {
+    "_id": "69bbb8d54e7e87b40ec6300f",
+    "name": "Dhoop Sticks",
+    "category": "Households",
+    "subcategory": "Pooja items"
+  },
+  {
+    "_id": "69bbb995e98621eb62490f88",
+    "name": "Tide Plus Detergent Powder 1kg",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  },
+  {
+    "_id": "69bbb995e98621eb62490f8b",
+    "name": "Comfort Fabric Conditioner 860ml",
+    "category": "Households",
+    "subcategory": "Detergents & Cleaning"
+  }
+]

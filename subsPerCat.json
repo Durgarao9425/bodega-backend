@@ -1,0 +1,41 @@
+{
+  "Groceries": [
+    "Aata, maida, besan & sooji",
+    "Dals, Pulses & Grains",
+    "Masala & Spices",
+    "Oil & Ghee",
+    "Rice, Poha & Sabhudana"
+  ],
+  "Households": [
+    "Breakfast & cereals",
+    "Detergents & Cleaning",
+    "Facewash & skincare",
+    "Hair care",
+    "Oral care",
+    "Pooja Items",
+    "Pooja items"
+  ],
+  "Fruits & Vegetables": [
+    "Fresh Fruits",
+    "Fruits",
+    "Vegetables"
+  ],
+  "Dairy & Eggs": [
+    "Butter & Cheese",
+    "Milk"
+  ],
+  "Beverages": [
+    "Cold Drinks",
+    "Juices"
+  ],
+  "Bakery": [
+    "Biscuits",
+    "Bread"
+  ],
+  "Dry Fruits": [
+    "Premium Nuts"
+  ],
+  "Testing cat": [
+    ""
+  ]
+}
