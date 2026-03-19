@@ -81,19 +81,23 @@ router.post('/verify-otp', async (req, res) => {
     }
 
     // Find the user
-    const user = await User.findOne({ phone });
+    console.log(`🔍 Finding user for phone: ${phone}`);
+    const user = await User.findOne({ phone }).maxTimeMS(5000); // 5s timeout
 
     if (!user) {
+      console.warn(`❌ User not found for phone: ${phone}`);
       return res.status(404).json({ message: 'User not found. Please request OTP first.' });
     }
 
-    // Check if OTP is correct
-    if (user.otp !== otp) {
+    // Check if OTP is correct (case-insensitive and trimmed)
+    console.log(`🔑 Comparing OTPs: DB=${user.otp}, Input=${otp}`);
+    if (String(user.otp).trim() !== String(otp).trim()) {
       return res.status(400).json({ message: 'Invalid OTP. Please try again.' });
     }
 
     // Check if OTP has expired
-    if (new Date() > user.otpExpiry) {
+    if (user.otpExpiry && new Date() > user.otpExpiry) {
+      console.warn(`🕒 OTP expired for phone: ${phone}`);
       return res.status(400).json({ message: 'OTP has expired. Please request a new one.' });
     }
 
@@ -101,6 +105,8 @@ router.post('/verify-otp', async (req, res) => {
     user.otp = null;
     user.otpExpiry = null;
     user.isVerified = true;
+    
+    console.log(`💾 Saving verified user: ${phone}`);
     await user.save();
 
     // Create JWT token for this user
@@ -114,11 +120,16 @@ router.post('/verify-otp', async (req, res) => {
         phone: user.phone,
         name: user.name,
         email: user.email,
-      },
+        isVerified: user.isVerified
+      }
     });
+
   } catch (error) {
-    console.error('Verify OTP Error:', error);
-    res.status(500).json({ message: 'Server error. Please try again.' });
+    console.error('Verify OTP Critical Error:', error.message);
+    res.status(500).json({ 
+      message: 'Server error during verification. This is often a database connection timeout.',
+      error: error.message 
+    });
   }
 });
 
