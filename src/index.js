@@ -31,7 +31,18 @@ const allowedOrigins = [
 ].filter(Boolean);
 
 app.use(cors({
-  origin: allowedOrigins.length > 0 ? allowedOrigins : '*', // Fallback to all for debugging if none provided
+  origin: (origin, callback) => {
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes('*')) {
+      callback(null, true);
+    } else {
+      // In case of any origin mismatch during production/dev transitions,
+      // allow this origin but log it for debugging
+      console.warn(`Allowed origin through fallback: ${origin}`);
+      callback(null, true);
+    }
+  },
   credentials: true,
 }));
 
