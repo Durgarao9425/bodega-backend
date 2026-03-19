@@ -38,6 +38,33 @@ const PRODUCTS_TO_DELETE = [
   'Green Capsicum',
   'Fresh Potatoes',
   'Brass Diya',
+  // New items with unsupported images
+  'Candle Pack Big',
+  'Multipurpose Kitchen Scissors',
+  'Coriander Leaves Bundles',
+  'Potatoes 2kg Pack',
+  'Head & Shoulders Cool Menthol',
+  'Cetaphil Gentle Skin Cleanser',
+  'Surf Excel Liquid Detergent 1L',
+  "Kellogg's Chocos 375g",
+  'Besan (Gram Flour) 1kg',
+  'Moong Dal Split 1kg',
+  'Figaro Olive Oil 500ml',
+  'Dhara Groundnut Oil 1L',
+  'Engine Mustard Oil 1L',
+  '1 L',
+  // Second list of items with unsupported images
+  'Black Raisins 250g',
+  'Dried Apricots 200g',
+  'Rice Flour 1kg',
+  'Safal Green Peas Frozen',
+  'Honey Spread Premium',
+  'Wild Stone Men\'s Face Wash',
+  'Garbage Bags Large 30ct',
+  'Colin Glass Cleaner',
+  'Bagrry\'s Corn Flakes Box',
+  'Nestle Honey Stars',
+  'Indulekha Bringha Ayurvedic Oil',
 ];
 
 async function run() {

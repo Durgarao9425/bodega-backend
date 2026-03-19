@@ -102,13 +102,17 @@ mongoose
     console.log('✅ Connected to MongoDB');
 
     // AUTO-SEED: Check if products exist, seed if not (for demo purposes)
+    // AUTO-SEED: Ensure latest products exist (checking for a sample new product)
     try {
-      const count = await Product.countDocuments();
-      if (count === 0) {
-        console.log('🌱 Database empty. Seeding products...');
+      const needsSeed = !(await Product.findOne({ name: 'Premium Almonds 500g' }));
+      
+      if (needsSeed) {
+        console.log('🌱 Database outdated or empty. Re-seeding latest products...');
+        await Product.deleteMany({});
         await Product.insertMany(seedData);
-        console.log(`✅ Seeded ${seedData.length} products!`);
+        console.log(`✅ Successfully re-seeded ${seedData.length} products!`);
       } else {
+        const count = await Product.countDocuments();
         console.log(`📡 Products already online: ${count}`);
       }
     } catch (err) {
