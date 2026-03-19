@@ -75,45 +75,62 @@ const products = [
     reviews: 290
   },
 
-  // ─── Households → Pooja items ───
+  // ─── Households → Facewash & skincare ───
   {
-    name: "Agarbatti Premium Pack",
-    description: "Natural rose and sandalwood incense sticks for daily puja.",
-    price: 45,
-    originalPrice: 60,
+    name: "Himalaya Neem Facewash 200ml",
+    description: "Natural neem and turmeric for clear, pimple-free skin. Prevents outbreaks.",
+    price: 180,
+    originalPrice: 210,
     category: "Households",
-    subcategory: "Pooja items",
-    unit: "100 sticks",
-    image: "https://images.unsplash.com/photo-1608681295247-495ccb009e6c?auto=format&fit=crop&q=80&w=400&h=400",
-    stock: 500,
-    rating: 4.9,
-    reviews: 420
-  },
-  {
-    name: "Pooja Thali Set",
-    description: "Brass pooja thali set with diya, kumkum box and bell.",
-    price: 299,
-    originalPrice: 450,
-    category: "Households",
-    subcategory: "Pooja Items",
-    unit: "1 Set",
-    image: "https://images.unsplash.com/photo-1629813291244-672ceb58d927?auto=format&fit=crop&q=80&w=400&h=400",
-    stock: 30,
-    rating: 4.8,
-    reviews: 65
-  },
-  {
-    name: "Camphor / Kapur 50g",
-    description: "Pure camphor for daily pooja rituals.",
-    price: 60,
-    originalPrice: 75,
-    category: "Households",
-    subcategory: "Pooja Items",
-    unit: "50g",
-    image: "https://images.unsplash.com/photo-1610444583849-01f2eab91de6?auto=format&fit=crop&q=80&w=400&h=400",
+    subcategory: "Facewash & skincare",
+    unit: "200ml",
+    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=400&h=400",
     stock: 120,
+    rating: 4.6,
+    reviews: 500
+  },
+  {
+    name: "Cetaphil Gentle Skin Cleanser",
+    description: "Hydrating and soothing skin cleanser for all skin types. Soap-free formula.",
+    price: 350,
+    originalPrice: 420,
+    category: "Households",
+    subcategory: "Facewash & skincare",
+    unit: "125ml",
+    image: "https://images.unsplash.com/photo-1610444583849-01f2eab91de6?q=80&w=400&h=400",
+    stock: 60,
+    rating: 4.8,
+    reviews: 800
+  },
+
+  // ─── Households → Hair care ───
+  {
+    name: "Tresemme Keratin Smooth Shampoo",
+    description: "Professional keratin smooth shampoo for shiny, frizz-free hair.",
+    price: 240,
+    originalPrice: 300,
+    category: "Households",
+    subcategory: "Hair care",
+    unit: "580ml",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=400&h=400",
+    stock: 90,
+    rating: 4.7,
+    reviews: 350
+  },
+
+  // ─── Households → Breakfast & cereals ───
+  {
+    name: "Kellogg's Corn Flakes Original",
+    description: "Iron-rich healthy breakfast with 8 essential vitamins.",
+    price: 180,
+    originalPrice: 200,
+    category: "Households",
+    subcategory: "Breakfast & cereals",
+    unit: "875g",
+    image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=400&h=400",
+    stock: 100,
     rating: 4.5,
-    reviews: 80
+    reviews: 430
   },
 
   // ─── Dairy & Eggs ───
@@ -241,20 +258,6 @@ const products = [
     reviews: 230
   },
 
-  // ─── Groceries → Dals, Pulses & Grains ───
-  {
-    name: "Toor Dal Premium 1kg",
-    description: "Unpolished natural toor dal cooked faster and more nutritious.",
-    price: 145,
-    originalPrice: 170,
-    category: "Groceries",
-    subcategory: "Dals, Pulses & Grains",
-    unit: "1 kg",
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Toordal.JPG",
-    stock: 300,
-    rating: 4.9,
-    reviews: 500
-  },
   {
     name: "Chana Dal 1kg",
     description: "Split bengal gram dal, ideal for dal recipes and snacks.",
@@ -366,14 +369,14 @@ const products = [
     reviews: 55
   },
 
-  // ─── Fruits & Vegetables → Fruits ───
+  // ─── Fruits & Vegetables → Fresh Fruits ───
   {
-    name: "Kashmir Apples 1kg",
-    description: "Sweet and crisp premium Kashmiri apples, hand-picked and fresh.",
-    price: 180,
-    originalPrice: 220,
+    name: "Washington Red Apples 1kg",
+    description: "Premium sweet and crunchy red apples imported from Washington.",
+    price: 240,
+    originalPrice: 280,
     category: "Fruits & Vegetables",
-    subcategory: "Fruits",
+    subcategory: "Fresh Fruits",
     unit: "1 kg",
     image: "https://images.unsplash.com/photo-1560806887-1e4cd0b6faa6?auto=format&fit=crop&q=80&w=400&h=400",
     stock: 50,
@@ -448,19 +451,19 @@ const products = [
     reviews: 130
   },
 
-  // ─── Testing cat ───
+  // ─── Testing cat → Other Items ───
   {
-    name: "Test Product Sample",
-    description: "Sample product for testing the category and filters functionality.",
-    price: 99,
+    name: "Multipurpose Kitchen Scissors",
+    description: "Stainless steel sharp scissors for kitchen and household use.",
+    price: 120,
     originalPrice: 150,
     category: "Testing cat",
-    subcategory: "",
+    subcategory: "Other Items",
     unit: "1 piece",
     image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=400&h=400",
-    stock: 10,
-    rating: 4.0,
-    reviews: 5
+    stock: 20,
+    rating: 4.5,
+    reviews: 15
   },
 ];
 
