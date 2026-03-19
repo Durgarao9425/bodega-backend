@@ -12,10 +12,16 @@ function generateOTP() {
 
 // ----- Helper: Create JWT Token -----
 function createToken(userId) {
+  // Use a fallback secret ONLY if environment variable is missing (prevents crash)
+  const secret = process.env.JWT_SECRET || 'fallback_development_secret_key_123';
+  if (!process.env.JWT_SECRET) {
+    console.warn('⚠️ JWT_SECRET is not defined in .env! Using fallback. This is dangerous for production.');
+  }
+  
   return jwt.sign(
-    { userId }, // payload (data inside the token)
-    process.env.JWT_SECRET, // secret key from .env
-    { expiresIn: '7d' } // token expires in 7 days
+    { userId }, // payload
+    secret,
+    { expiresIn: '7d' }
   );
 }
 
@@ -101,6 +107,9 @@ router.post('/verify-otp', async (req, res) => {
       return res.status(400).json({ message: 'OTP has expired. Please request a new one.' });
     }
 
+    // Create JWT token first (so if it fails, we don't clear the OTP)
+    const token = createToken(user._id);
+
     // OTP is valid → clear it from DB (one-time use)
     user.otp = null;
     user.otpExpiry = null;
@@ -108,9 +117,6 @@ router.post('/verify-otp', async (req, res) => {
     
     console.log(`💾 Saving verified user: ${phone}`);
     await user.save();
-
-    // Create JWT token for this user
-    const token = createToken(user._id);
 
     res.status(200).json({
       message: 'Login successful',
