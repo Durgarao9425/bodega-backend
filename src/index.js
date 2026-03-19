@@ -85,12 +85,15 @@ app.get('/api/health', (req, res) => {
 // ===== CONNECT TO MONGODB =====
 console.log('⏳ Attempting to connect to MongoDB...');
 
-if (!process.env.MONGO_URI || !process.env.JWT_SECRET) {
-  console.error('❌ CRITICAL ERROR: Mandatory environment variables are missing!');
-  if (!process.env.MONGO_URI) console.error('  - MONGO_URI is not defined.');
-  if (!process.env.JWT_SECRET) console.error('  - JWT_SECRET is not defined.');
+if (!process.env.MONGO_URI) {
+  console.error('❌ CRITICAL ERROR: MONGO_URI is not defined!');
   console.error('Available keys:', Object.keys(process.env).join(', '));
   process.exit(1);
+}
+
+if (!process.env.JWT_SECRET) {
+  console.warn('⚠️ WARNING: JWT_SECRET is not defined. Using an insecure fallback for now.');
+  console.warn('Please add JWT_SECRET to your environment variables for production security.');
 }
 
 mongoose
