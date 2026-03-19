@@ -3,6 +3,8 @@ require('dotenv').config();
 
 // Workaround for 'querySrv ECONNREFUSED' MongoDB Atlas connection error
 const dns = require('dns');
+const Product = require('./models/Product');
+const seedData = require('./seed/seedProducts').products;
 try {
   dns.setServers(['8.8.8.8', '8.8.4.4']);
   console.log('✅ DNS servers set for MongoDB connection');
@@ -90,8 +92,23 @@ if (!process.env.MONGO_URI) {
 
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => {
+  .then(async () => {
     console.log('✅ Connected to MongoDB');
+
+    // AUTO-SEED: Check if products exist, seed if not (for demo purposes)
+    try {
+      const count = await Product.countDocuments();
+      if (count === 0) {
+        console.log('🌱 Database empty. Seeding products...');
+        await Product.insertMany(seedData);
+        console.log(`✅ Seeded ${seedData.length} products!`);
+      } else {
+        console.log(`📡 Products already online: ${count}`);
+      }
+    } catch (err) {
+      console.warn('⚠️ Auto-seed failed:', err.message);
+    }
+
     // Start the server only after DB connection is successful
     app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 Server running on port ${PORT}`);

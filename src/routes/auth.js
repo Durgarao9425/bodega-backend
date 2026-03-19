@@ -58,8 +58,8 @@ router.post('/send-otp', async (req, res) => {
 
     res.status(200).json({
       message: 'OTP sent successfully',
-      // Return OTP only in development mode (for testing)
-      otp: process.env.NODE_ENV === 'development' ? otp : undefined,
+      // Always return OTP for demo/testing convenience
+      otp: otp,
     });
   } catch (error) {
     console.error('Send OTP Error:', error);

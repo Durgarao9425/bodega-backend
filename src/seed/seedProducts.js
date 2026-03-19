@@ -484,4 +484,4 @@ async function seedProducts() {
   }
 }
 
-seedProducts();
+module.exports = { products, seedProducts };
