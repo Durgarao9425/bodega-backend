@@ -27,8 +27,6 @@ const PORT = process.env.PORT || 5000;
 
 // Support local development and standard Render settings
 const allowedOrigins = [
-  'http://localhost:5173', 
-  'http://localhost:3000',
   'https://bodega-frontend-phi.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
@@ -62,7 +60,7 @@ const orderRoutes = require('./routes/order');
 // ===== ROUTES =====
 // Root route (for quick testing)
 app.get('/', (req, res) => {
-  res.send('Bodega Clone API - Server is working! Please use /api/health for health check.');
+  res.send('StoreWave Clone API - Server is working! Please use /api/health for health check.');
 });
 
 // Mount our routes at specific paths
@@ -75,7 +73,7 @@ app.use('/api/order', orderRoutes);
 // Health check route - useful to test if server is running
 app.get('/api/health', (req, res) => {
   res.json({ 
-    message: 'Bodega API is running!', 
+    message: 'StoreWave API is running!', 
     status: 'OK', 
     timestamp: new Date().toISOString(),
     env: process.env.NODE_ENV || 'not set'
@@ -122,7 +120,7 @@ mongoose
     // Start the server only after DB connection is successful
     app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 Server running on port ${PORT}`);
-      console.log(`📡 Access via http://localhost:${PORT} or your Render URL`);
+      console.log(`📡 Access via your frontend application`);
     });
   })
   .catch((error) => {
