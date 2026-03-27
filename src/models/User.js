@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // User Schema - stores user info with phone number login
 const userSchema = new mongoose.Schema(
   {
-    // Phone number is the primary identifier (like bodegaa.in)
+    // Phone number is the primary identifier (like storewave.in)
     phone: {
       type: String,
       required: true,
