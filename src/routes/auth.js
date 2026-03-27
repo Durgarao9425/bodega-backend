@@ -60,16 +60,15 @@ router.post('/send-otp', async (req, res) => {
 
     // In real app, we would send SMS here.
     // We simulate by returning OTP in response (for demo only)
-    console.log(`📱 OTP for ${phone}: ${otp}`); // visible in backend terminal
+    console.log(`📱 [${new Date().toISOString()}] OTP Generated for ${phone}: ${otp}`); 
 
     res.status(200).json({
       message: 'OTP sent successfully',
-      // Always return OTP for demo/testing convenience
       otp: otp,
     });
   } catch (error) {
-    console.error('Send OTP Error:', error);
-    res.status(500).json({ message: 'Server error. Please try again.' });
+    console.error(`🚨 [${new Date().toISOString()}] Send OTP Error for ${req.body?.phone}:`, error);
+    res.status(500).json({ message: 'Server error while generating OTP. Please try again.' });
   }
 });
 
@@ -87,11 +86,12 @@ router.post('/verify-otp', async (req, res) => {
     }
 
     // Find the user
-    console.log(`🔍 Finding user for phone: ${phone}`);
-    const user = await User.findOne({ phone }).maxTimeMS(5000); // 5s timeout
+    console.log(`🔍 [${new Date().toISOString()}] Attempting to find user: ${phone}`);
+    // Increased timeout for slow DB connections on cold starts
+    const user = await User.findOne({ phone }).maxTimeMS(20000); 
 
     if (!user) {
-      console.warn(`❌ User not found for phone: ${phone}`);
+      console.warn(`❌ [${new Date().toISOString()}] User not found: ${phone}`);
       return res.status(404).json({ message: 'User not found. Please request OTP first.' });
     }
 
@@ -100,14 +100,15 @@ router.post('/verify-otp', async (req, res) => {
     const storedOtp = String(user.otp || '').trim();
     const inputOtp = String(otp || '').trim();
 
-    console.log(`🔑 Comparing OTPs: DB='${storedOtp}', Input='${inputOtp}'`);
+    console.log(`🔑 [${new Date().toISOString()}] OTP Verification hit for ${phone}`);
     if (storedOtp !== inputOtp) {
+      console.warn(`⚠️ [${new Date().toISOString()}] Incorrect OTP provided for ${phone}`);
       return res.status(400).json({ message: 'Invalid OTP. Please try again.' });
     }
 
     // Check if OTP has expired
     if (user.otpExpiry && new Date() > user.otpExpiry) {
-      console.warn(`🕒 OTP expired for phone: ${phone}`);
+      console.warn(`🕒 [${new Date().toISOString()}] OTP expired for ${phone}`);
       return res.status(400).json({ message: 'OTP has expired. Please request a new one.' });
     }
 
@@ -119,9 +120,10 @@ router.post('/verify-otp', async (req, res) => {
     user.otpExpiry = null;
     user.isVerified = true;
     
-    console.log(`💾 Saving verified user: ${phone}`);
+    console.log(`💾 [${new Date().toISOString()}] Verification success for ${phone}. Saving status...`);
     await user.save();
 
+    console.log(`🏁 [${new Date().toISOString()}] Login complete for ${phone}`);
     res.status(200).json({
       message: 'Login successful',
       token,
@@ -135,9 +137,9 @@ router.post('/verify-otp', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Verify OTP Critical Error:', error.message);
+    console.error(`🚨 [${new Date().toISOString()}] Verify OTP Critical Error for ${phone}:`, error.message);
     res.status(500).json({ 
-      message: 'Server error during verification. This is often a database connection timeout.',
+      message: 'Server error during verification. We are investigating this.',
       error: error.message 
     });
   }
