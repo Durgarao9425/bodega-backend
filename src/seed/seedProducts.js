@@ -554,6 +554,147 @@ const products = [
     stock: 200, rating: 4.8, reviews: 340
   },
 
+  // ─── Bakery (5 items) ───
+  {
+    name: "Britannia Good Day Cashew Biscuits",
+    description: "Rich and buttery cookies with cashew nuts.",
+    price: 35, originalPrice: 40, category: "Bakery", subcategory: "Biscuits", unit: "200g",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop",
+    stock: 150, rating: 4.7, reviews: 210
+  },
+  {
+    name: "Oreo Chocolate Sandwich Biscuits",
+    description: "Crunchy cocoa biscuits with vanilla cream.",
+    price: 45, originalPrice: 50, category: "Bakery", subcategory: "Biscuits", unit: "120g",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&auto=format&fit=crop",
+    stock: 120, rating: 4.8, reviews: 340
+  },
+  {
+    name: "Brown Bread 400g",
+    description: "Healthy whole wheat fresh bread.",
+    price: 40, originalPrice: 45, category: "Bakery", subcategory: "Bread", unit: "400g",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop",
+    stock: 50, rating: 4.5, reviews: 85
+  },
+  {
+    name: "White Bread 400g",
+    description: "Soft and fresh premium white bread.",
+    price: 35, originalPrice: 40, category: "Bakery", subcategory: "Bread", unit: "400g",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop",
+    stock: 80, rating: 4.4, reviews: 120
+  },
+  {
+    name: "Fruit Bun 2pcs",
+    description: "Sweet bun with dried fruits and tutty fruity.",
+    price: 25, originalPrice: 30, category: "Bakery", subcategory: "Bread", unit: "2 units",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop",
+    stock: 40, rating: 4.6, reviews: 45
+  },
+
+  // ─── Snacks (5 items) ───
+  {
+    name: "Lay's Classic Salted",
+    description: "The classic American salted potato chips.",
+    price: 20, originalPrice: 20, category: "Snacks", subcategory: "Namkeen", unit: "50g",
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500&auto=format&fit=crop",
+    stock: 200, rating: 4.7, reviews: 500
+  },
+  {
+    name: "Kurkure Masala Munch",
+    description: "Tedhe Medhe crunchy corn puffs.",
+    price: 20, originalPrice: 20, category: "Snacks", subcategory: "Namkeen", unit: "90g",
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500&auto=format&fit=crop",
+    stock: 180, rating: 4.6, reviews: 420
+  },
+  {
+    name: "Haldiram's Bhujia Sev",
+    description: "Spicy and crunchy chickpea flour sticks.",
+    price: 55, originalPrice: 60, category: "Snacks", subcategory: "Namkeen", unit: "200g",
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500&auto=format&fit=crop",
+    stock: 150, rating: 4.9, reviews: 310
+  },
+  {
+    name: "Cadbury Dairy Milk Silk",
+    description: "Rich and smooth chocolate bar.",
+    price: 80, originalPrice: 85, category: "Snacks", subcategory: "Chocolates", unit: "60g",
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=500&auto=format&fit=crop",
+    stock: 100, rating: 4.9, reviews: 620
+  },
+  {
+    name: "Kitkat 4 Finger",
+    description: "Crispy wafer covered in milk chocolate.",
+    price: 30, originalPrice: 30, category: "Snacks", subcategory: "Chocolates", unit: "38g",
+    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=500&auto=format&fit=crop",
+    stock: 120, rating: 4.8, reviews: 290
+  },
+
+  // ─── Dairy & Eggs (5 items) ───
+  {
+    name: "Amul Taaza Milk 500ml",
+    description: "Fresh and pure toned milk.",
+    price: 27, originalPrice: 28, category: "Dairy & Eggs", subcategory: "Milk", unit: "500ml",
+    image: "https://images.unsplash.com/photo-1550583724-125581e7699b?w=500&auto=format&fit=crop",
+    stock: 100, rating: 4.8, reviews: 1500
+  },
+  {
+    name: "Amul Butter 100g",
+    description: "Utterly butterly delicious salted butter.",
+    price: 56, originalPrice: 58, category: "Dairy & Eggs", subcategory: "Butter & Cheese", unit: "100g",
+    image: "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=500&auto=format&fit=crop",
+    stock: 120, rating: 4.9, reviews: 850
+  },
+  {
+    name: "Britannia Cheese Slices",
+    description: "Creamy and delicious processed cheese slices.",
+    price: 160, originalPrice: 175, category: "Dairy & Eggs", subcategory: "Butter & Cheese", unit: "200g",
+    image: "https://images.unsplash.com/photo-1528287943913-d457ad23aa59?w=500&auto=format&fit=crop",
+    stock: 60, rating: 4.7, reviews: 310
+  },
+  {
+    name: "Fresh Farm Eggs 6pcs",
+    description: "Rich in protein fresh white farm eggs.",
+    price: 45, originalPrice: 50, category: "Dairy & Eggs", subcategory: "Eggs", unit: "6 units",
+    image: "https://images.unsplash.com/photo-1587486914446-ac9f5b272183?w=500&auto=format&fit=crop",
+    stock: 200, rating: 4.6, reviews: 420
+  },
+  {
+    name: "Mother Dairy Paneer 200g",
+    description: "Soft and fresh malai paneer.",
+    price: 90, originalPrice: 100, category: "Dairy & Eggs", subcategory: "Milk", unit: "200g",
+    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&auto=format&fit=crop",
+    stock: 50, rating: 4.8, reviews: 280
+  },
+
+  // ─── Beverages (4 items) ───
+  {
+    name: "Coca Cola 750ml",
+    description: "Refreshing cold drink with classic cola taste.",
+    price: 40, originalPrice: 45, category: "Beverages", subcategory: "Cold Drinks", unit: "750ml",
+    image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&auto=format&fit=crop",
+    stock: 150, rating: 4.7, reviews: 900
+  },
+  {
+    name: "Pepsi 600ml",
+    description: "Thirst quenching cola soft drink.",
+    price: 35, originalPrice: 40, category: "Beverages", subcategory: "Cold Drinks", unit: "600ml",
+    image: "https://images.unsplash.com/photo-1629203851020-7dd29b1ad40c?w=500&auto=format&fit=crop",
+    stock: 120, rating: 4.6, reviews: 750
+  },
+  {
+    name: "Tropicana Orange Juice 1L",
+    description: "100% pure orange juice with no added sugar.",
+    price: 110, originalPrice: 125, category: "Beverages", subcategory: "Juices", unit: "1 L",
+    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500&auto=format&fit=crop",
+    stock: 80, rating: 4.8, reviews: 310
+  },
+  {
+    name: "Real Mixed Fruit Juice 1L",
+    description: "Goodness of 9 fruits in every sip.",
+    price: 105, originalPrice: 120, category: "Beverages", subcategory: "Juices", unit: "1 L",
+    image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop",
+    stock: 90, rating: 4.7, reviews: 280
+  },
+
   // ─── Testing cat → Other Items (5 items) ───
 
   {

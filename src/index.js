@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 
 // Support local development and standard Render settings
 const allowedOrigins = [
-  'https://bodega-frontend-phi.vercel.app',
+  'https://storewave-new.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
@@ -102,7 +102,8 @@ mongoose
     // AUTO-SEED: Check if products exist, seed if not (for demo purposes)
     // AUTO-SEED: Ensure latest products exist (checking for a sample new product)
     try {
-      const needsSeed = !(await Product.findOne({ name: 'Premium Almonds 500g' }));
+      const sampleProductName = 'Britannia Good Day Cashew Biscuits';
+      const needsSeed = !(await Product.findOne({ name: sampleProductName }));
       
       if (needsSeed) {
         console.log('🌱 Database outdated or empty. Re-seeding latest products...');
